@@ -29,11 +29,12 @@ class BoletoController extends Boleto
 
         $email = new EmailService();
         $email->setLogo(__DIR__ . '/../View/images/logopaghiper.gif', 'logo.gif');
+        $email->email->addStringAttachment(file_get_contents($this->retorno['result']['url_slip_pdf']), 'boleto.pdf');
         $email->setTemplateDefault(true);
 
         //Recipients
-        $email->email->setFrom('jeffersonmiranda0@gmail.com', 'Jefferson Miranda');
-        $email->email->addAddress('jeffersonmiranda0@gmail.com', 'Jefferson Miranda');
+        $email->email->setFrom('email@gmail.com', 'Jefferson Miranda');
+        $email->email->addAddress('email@gmail.com', 'Jefferson Miranda');
         $email->email->addReplyTo('noreply@example.com', 'noreply');
 
         $email->email->Subject = 'BOLETO PAGAMENTO HOSPEDAGEM';
@@ -46,7 +47,7 @@ class BoletoController extends Boleto
                         </p>
         
         
-                        <h1><a href=\"\">GERAR BOLETO</a></h1>
+                        <h1><a href=\"{$this->retorno['result']['url_slip']}\">GERAR BOLETO</a></h1>
                         <br />
         
                         <p>Abraços <strong>Jefferson Miranda</strong></p>";

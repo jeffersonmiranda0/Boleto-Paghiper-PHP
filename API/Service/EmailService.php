@@ -51,10 +51,17 @@ class EmailService
         $this->email->isSMTP();
         $this->email->Host          = 'smtp.gmail.com';
         $this->email->SMTPAuth      = true;
-        $this->email->Username      = 'youremail@gmail.com';
-        $this->email->Password      = 'xxxxxxxxxxxxxxxxxxx';
-        $this->email->SMTPSecure    = 'tls';
-        $this->email->Port          = 465;
+        $this->email->Username      = 'email@gmail.com';
+        $this->email->Password      = 'xxxxxxxxxxxxxxx';
+        $this->email->SMTPSecure    = 'TLS';
+        $this->email->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        );
+        $this->email->Port          = 587;
     }
 
 

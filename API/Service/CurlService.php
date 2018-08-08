@@ -55,7 +55,8 @@ class CurlService
                 'result' => [
                     'transaction_id'    => $json['create_request']['transaction_id'],
                     'url_slip'          => $json['create_request']['bank_slip']['url_slip'],
-                    'digitable_line'    => $json['create_request']['bank_slip']['digitable_line']
+                    'digitable_line'    => $json['create_request']['bank_slip']['digitable_line'],
+                    'url_slip_pdf'      => $json['create_request']['bank_slip']['url_slip_pdf']
                 ]
             ];
 

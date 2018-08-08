@@ -10,7 +10,7 @@ require_once 'vendor/autoload.php';
 
 use \API\Controller\BoletoController;
 $boleto = new BoletoController();
-$boleto->setApiKey('apk_48016177-mTOwxLWbqhNtNOd55e6uvwXNEWGnAfwyS');
+$boleto->setApiKey('apk_48016177-d5da5fae66asd8f8e55s5s'); //TOKEN API PAGHIPER
 $boleto->setOrderId(date('m/Y'));
 $boleto->setPayerEmail('jeffersonmiranda0@gmail.com');
 $boleto->setPayerName('Jefferson Miranda');

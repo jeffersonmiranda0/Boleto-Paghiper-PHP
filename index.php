@@ -10,7 +10,7 @@ require_once 'vendor/autoload.php';
 
 use \API\Controller\BoletoController;
 $boleto = new BoletoController();
-$boleto->setApiKey('apk_48016177-mTOwxLWbqhNtNOBcwmuvwXNEWGnAfwyS');
+$boleto->setApiKey('apk_48016177-mTOwxLWbqhNtNOd55e6uvwXNEWGnAfwyS');
 $boleto->setOrderId(date('m/Y'));
 $boleto->setPayerEmail('jeffersonmiranda0@gmail.com');
 $boleto->setPayerName('Jefferson Miranda');
@@ -24,3 +24,4 @@ $boleto->setItems([
     "price_cents"   => 4000
 ]);
 $boleto->generate();
+$boleto->sendEmail();

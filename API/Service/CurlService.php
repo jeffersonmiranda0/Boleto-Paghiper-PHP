@@ -27,8 +27,6 @@ class CurlService
 
         $data_post      = json_encode( $data );
 
-        echo $data_post . '<br />';
-
         $url            = $this->url;
         $mediaType      = $this->mediaType; // formato da requisição
         $charSet        = $this->charSet;
@@ -49,8 +47,6 @@ class CurlService
         $result          = curl_exec($ch);
         $json            = json_decode($result, true);
         $httpCode        = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-        var_dump($result);
 
         if($httpCode == 201):
 
